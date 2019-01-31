@@ -79,9 +79,9 @@
 
     for (; j < len; ++j) {
       this_el = elements[j];
-      
-      if (!this_el.getAttribute('data-src') || !isInViewport(this_el.getBoundingClientRect())) {
-        return;
+
+      if (!this_el.getAttribute('data-src') || this_el.getAttribute('data-src') === '' || !isInViewport(this_el.getBoundingClientRect())) {
+        continue;
       }
       
       if (!!this_el.getAttribute('data-src') && isInViewport(this_el.getBoundingClientRect())) {
