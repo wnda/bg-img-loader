@@ -13,8 +13,8 @@
   }
 
   function rebounce (f) {
-    var scheduled, context, args, i, j;
-    
+    let scheduled, context, args, i, j;
+
     return function () {
       context = this; 
       args = [];
@@ -44,8 +44,8 @@
     for (;j < i; ++j) {
       let this_el = elements[j];
 
-      if (!this_el.getAttribute('data-src') || !isInViewport(this_el.getBoundingClientRect())) {
-        return;
+      if (!this_el.getAttribute('data-src') || this_el.getAttribute('data-src') === '' || !isInViewport(this_el.getBoundingClientRect())) {
+        continue;
       }
       
       if (!!this_el.getAttribute('data-src') && isInViewport(this_el.getBoundingClientRect())) {
