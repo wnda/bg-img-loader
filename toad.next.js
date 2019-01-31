@@ -13,8 +13,8 @@
   }
 
   function rebounce (f) {
-    var scheduled, context, args, i, j;
-    
+    let scheduled, context, args, i, j;
+
     return function () {
       context = this; 
       args = [];
